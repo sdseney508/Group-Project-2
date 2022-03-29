@@ -23,6 +23,10 @@ captured.init(
         type: DataTypes.DATE,
         defaultValue: DataTypes.NOW
     },
+    custom_name: {
+      type: DataTypes.STRING,
+      defaultValue: this.name,
+    },
     user_id: {
         type: DataTypes.INTEGER,
         allowNull: false,

@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Favorite, Captured, User } = require('../models');
 const withAuth = require('../utils/auth');
 
+//take me to the homepage
 router.get('/', async (req, res) => {
   try {
     // Get all pokemon and the user name of the blog creator

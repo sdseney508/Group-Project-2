@@ -23,6 +23,10 @@ Favorites.init(
             key: 'id'
         }
     },
+    custom_name: {
+      type: DataTypes.STRING,
+      defaultValue: this.name,
+    },
  
     sequelize,
     timestamps: false,
