@@ -2,16 +2,19 @@
   {
     "name": "funnyguy",
     "email": "ipfreely@hotmail.com",
-    "password": "password12345"
+    "password": "password12345",
+    "location": "03751"
   },
   {
     "name": "Seymour",
     "email": "Sbutt@gmail.com",
-    "password": "password12345"
+    "password": "password12345",
+    "location": "03854"
   },
   {
     "name": "randomguy",
     "email": "rando1234@aol.com",
-    "password": "password12345"
+    "password": "password12345",
+    "location": "02745"
   }
 ]
