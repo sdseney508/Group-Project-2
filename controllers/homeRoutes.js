@@ -1,11 +1,12 @@
 const router = require('express').Router();
-const { Blog, BlogComments, User } = require('../models');
+const { Favorite, Captured, User } = require('../models');
 const withAuth = require('../utils/auth');
 
+//take me to the homepage
 router.get('/', async (req, res) => {
   try {
-    // Get all blogs and the user name of the blog creator
-    const blogData = await Blog.findAll({
+    // Get all pokemon and the user name of the blog creator
+    const userData = await Blog.findAll({
       include: [
         {
           model: User,

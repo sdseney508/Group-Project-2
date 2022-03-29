@@ -35,8 +35,14 @@ User.init(
         len: [8],
       },
     },
-  },
-  {
+    location: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      validate: {
+        len: [5],
+      },
+    },
+  
     hooks: {
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);

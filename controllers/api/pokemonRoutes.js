@@ -1,10 +1,13 @@
 const router = require('express').Router();
-const { Blog } = require('../../models');
+const { Favorites, Captured } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.post('/', withAuth, async (req, res) => {
+
+//get the list of all pokemon
+//make this
+router.GET('/', withAuth, async (req, res) => {
     try {
-        const newBlog = await Blog.create({
+        const pokemon = await Pokemon.GET({
             ...req.body,
             user_id: req.session.user_id,
         });
