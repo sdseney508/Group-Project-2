@@ -1,0 +1,17 @@
+[
+  {
+    "name": "bulbasaur",
+    "custom_name": "Bulbie",
+    "user_id": "1"
+  },
+  {
+    "name": "pikachu",
+    "custom_name": "pik",
+    "user_id": "2"
+  },
+  {
+    "name": " Venusaur",
+    "custom_name": "Venus",
+    "user_id": "3"
+  }
+]
