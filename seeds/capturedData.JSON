@@ -1,0 +1,23 @@
+[
+  {
+    "name": "bulbasaur",
+    "game_caught": "Red",
+    "date_caught": "1 Jan 2022",
+    "custom_name": "Bulbie",
+    "user_id": "1"
+  },
+  {
+    "name": "pikachu",
+    "game_caught": "Red",
+    "date_caught": "1 Jan 2022",
+    "custom_name": "pik",
+    "user_id": "2"
+  },
+  {
+    "name": " Venusaur",
+    "game_caught": "Red",
+    "date_caught": "1 Jan 2022",
+    "custom_name": "Venus",
+    "user_id": "3"
+  }
+]
