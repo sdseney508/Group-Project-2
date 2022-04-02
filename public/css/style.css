@@ -1,4 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
+  background: #abbef1;
+  background: linear-gradient(to right, #D4D3DD, #abbef1);
+  font-family: 'Press Start 2P', cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.poke-header{
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.poke-search form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.poke-search input{
+  height: 60px;
+  width: 500px;
+  justify-content: center;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.pokeball{
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: fixed;
+  right: 27%;
+  top: 15%;
+}
+
+#login{
+  justify-content: center;
+  margin: 15px;
+}
+
+.btn{
+  margin: 5px;
+}
+
+
+
+
+
+/*body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
@@ -20,4 +78,4 @@ textarea {
   border-radius: 0; 
   padding: 3px;
   margin-bottom: 1px;
-}
+}*/
