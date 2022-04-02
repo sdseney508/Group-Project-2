@@ -27,6 +27,11 @@
   <div class="col-md-6 project-list">
     <h3>Current Collection:</h3>
 
+    <div class="poke-search">
+      <form id="form"><input type="text" id="search" class="search" placeholder="Search Pokémon"></form>
+      <button class="pokeball"><i class="nes-pokeball"></i></button>
+    </div>
+
     {{#each pokemons as |pokemon|}}
     <div class="row mb-2">
       <div class="col-md-8">
