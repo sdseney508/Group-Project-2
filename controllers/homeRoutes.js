@@ -3,7 +3,7 @@ const { Favorite, Captured, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 //take me to the homepage
-router.get('/', async (req, res) => {
+router.get('/user_id', async (req, res) => {
   try {
     // Get all pokemon associated with the logged in user name of the blog creator
     const userData = await Blog.findAll({
@@ -45,27 +45,6 @@ router.get('/blog/:id', async (req, res) => {
     res.render('blog', {
       ...blog,
       logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-
-router.get('/dashboard', withAuth, async (req, res) => {
-  try {
-    // pull only blogs from the user logged in
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Blog }],
-      //need to join in the blog comments so they can recomment if desired, ask for help here
-    });
-
-    const user = userData.get({ plain: true });
-
-    res.render('dashboard', {
-      ...user,
-      logged_in: true
     });
   } catch (err) {
     res.status(500).json(err);

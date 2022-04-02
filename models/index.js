@@ -1,16 +1,17 @@
 const User = require('./User');
 const Captured = require('./Captured');
-const Pokedex = require('./UserPokedex');
+const UserPokedex = require('./UserPokedex');
+const PokeName = require('./PokeNames');
 
 User.hasMany(Captured, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE',
 });
 
-User.hasMany(Pokedex, {
+User.hasMany(UserPokedex, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE',
 });
 
 
-module.exports = { User, Captured, Pokedex };
+module.exports = { User, Captured, UserPokedex, PokeName };

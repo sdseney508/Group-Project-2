@@ -10,7 +10,7 @@ const pokehelper = require('../../utils/pokehelper');
 router.GET('/', withAuth, async (req, res) => {
     try {
         //make this a get_all
-        const pokemon = fetch('https://pokedex2.p.rapidapi.com/pokedex/uk/pikachu', options);
+        const pokemon = await pokehelper.get_all.get(req.params.id);
         console.log(pokemon);
         res.status(200).json(newBlog);
     } catch (err) {
@@ -22,7 +22,7 @@ router.GET('/', withAuth, async (req, res) => {
 router.GET('/:id', withAuth, async (req, res) => {
     try {
         //make this get_one
-        const pokemon = await get_one.get(req.params.id)
+        const pokemon = await get_one.get(req.params.id);
         console.log(pokemon);
         res.status(200).json(newBlog);
     } catch (err) {
