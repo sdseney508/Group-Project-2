@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class UserPokedex extends Model {};
+class UserPokedex extends Model { };
 
 UserPokedex.init(
   {
@@ -16,12 +16,12 @@ UserPokedex.init(
       allowNull: false,
     },
     user_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'user',
-            key: 'id'
-        }
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
     },
     custom_name: {
       type: DataTypes.STRING,
@@ -32,14 +32,14 @@ UserPokedex.init(
       type: DataTypes.BOOLEAN,
       defaultValue: false
     },
-    
+
   },
- {
+  {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'pokedex',
+    modelName: 'userpokedex',
   }
 );
 

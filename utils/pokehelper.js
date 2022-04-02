@@ -1,3 +1,5 @@
+Pokemon = require('pokemon.js');
+
 Pokemon.setLanguage('english');
 
 const axios = require('axios');
@@ -10,7 +12,6 @@ let types = [];
 let abilities = [];
 let strengths = [];
 let weaknesses = [];
-// let generation = [];
 let games = [];
 let weight = '';
 let base_hp = '';
@@ -86,7 +87,7 @@ const get_one = async (id) => {
 
 
     })
-    poke_object = {name, weaknesses, strengths}
+    poke_object = {name, types, weight, abilities, weaknesses, strengths, base_attack, base_defense, speed, evolutions}
     return poke_object
 };
 
@@ -153,11 +154,8 @@ const get_all = async () => {
         console.log('Speed: ' + speed);
         console.log('Evolution Line: ');
         console.log(evolutions);
-
-
-
     })
-    poke_objects = {name, weaknesses, strengths}
+    poke_objects = {name, types, weight, abilities, weaknesses, strengths, base_attack, base_defense, speed, evolutions}
     return poke_objects
 };
 
