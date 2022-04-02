@@ -1,17 +1,17 @@
 <!-- Loop over each object in the projects array -->
-{{#each blogs as |blog| }}
+{{#each pokemons as |pokemon| }}
 <div class="flex-row ">
   <div class="flex-column justify-space-around">
-    <div class="blog-title">
+    <div class="pokemon-title">
       <h2>
-        <a href="/blog/{{blog.id}}">{{blog.blog_title}}</a>
+        <a href="/pokemon/{{pokemon.poke_id}}">{{pokemon.name}}</a>
         {{!-- double check how to reference a user_id as part of a query --}}
-        Posted by {{blog.user_id}} on {{blog.date_created}}
+        Caught by {{pokemon.user_id}} on {{pokemon.date_created}}
       </h2>
     </div>
-    <div class="blog-body">
+    <div class="pokemon-body">
       <p>
-        {{blog.blog_description}}
+        {{pokemon.pokemon_description}}
       </p>
     </div>
   </div>
