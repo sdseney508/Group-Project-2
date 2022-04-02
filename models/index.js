@@ -1,16 +1,16 @@
 const User = require('./User');
 const Captured = require('./Captured');
-const Favorites = require('./Favorites');
+const Pokedex = require('./UserPokedex');
 
 User.hasMany(Captured, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE',
 });
 
-User.hasMany(Favorites, {
+User.hasMany(Pokedex, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE',
 });
 
 
-module.exports = { User, Captured, Favorites };
+module.exports = { User, Captured, Pokedex };

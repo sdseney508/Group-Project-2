@@ -5,7 +5,7 @@ const withAuth = require('../utils/auth');
 //take me to the homepage
 router.get('/', async (req, res) => {
   try {
-    // Get all pokemon and the user name of the blog creator
+    // Get all pokemon associated with the logged in user name of the blog creator
     const userData = await Blog.findAll({
       include: [
         {
@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage', { 
+    res.render('/', { 
       blogs, 
       logged_in: req.session.logged_in 
     });

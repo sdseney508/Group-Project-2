@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Favorites extends Model {};
+class UserPokedex extends Model {};
 
-Favorites.init(
+UserPokedex.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -27,13 +27,20 @@ Favorites.init(
       type: DataTypes.STRING,
       defaultValue: this.name,
     },
- 
+
+    favorite: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
+    
+  },
+ {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'favorites',
+    modelName: 'pokedex',
   }
 );
 
-module.exports = Favorites;
+module.exports = UserPokedex;

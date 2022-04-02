@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class captured extends Model {};
+class Captured extends Model {};
 
-captured.init(
+Captured.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -35,6 +35,8 @@ captured.init(
             key: 'id'
         }
     },
+  },
+  {
  
     sequelize,
     timestamps: false,
@@ -44,4 +46,4 @@ captured.init(
   }
 );
 
-module.exports = captured;
+module.exports = Captured;

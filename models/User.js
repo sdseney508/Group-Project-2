@@ -42,7 +42,14 @@ User.init(
         len: [5],
       },
     },
-  
+
+    profile_public: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
+    },
+  },
+  {
     hooks: {
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
@@ -53,6 +60,7 @@ User.init(
         return updatedUserData;
       },
     },
+    
     sequelize,
     timestamps: false,
     freezeTableName: true,
