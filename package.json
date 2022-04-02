@@ -21,6 +21,7 @@
     "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
     "pokedex-promise-v2": "^4.0.0",
+    "pokemon": "^2.3.2",
     "pokemon.js": "^1.1.8",
     "sequelize": "^6.3.5"
   },

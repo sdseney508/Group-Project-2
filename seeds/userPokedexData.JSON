@@ -2,16 +2,19 @@
   {
     "name": "bulbasaur",
     "custom_name": "Bulbie",
-    "user_id": "1"
+    "user_id": "1",
+    "favorite": true
   },
   {
     "name": "pikachu",
     "custom_name": "pik",
-    "user_id": "2"
+    "user_id": "2",
+    "favorite": true
   },
   {
     "name": " Venusaur",
     "custom_name": "Venus",
-    "user_id": "3"
+    "user_id": "3",
+    "favorite": true
   }
 ]

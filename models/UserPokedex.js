@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Pokedex extends Model {};
+class UserPokedex extends Model {};
 
-Pokedex.init(
+UserPokedex.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -32,7 +32,9 @@ Pokedex.init(
       type: DataTypes.BOOLEAN,
       defaultValue: false
     },
- 
+    
+  },
+ {
     sequelize,
     timestamps: false,
     freezeTableName: true,
@@ -41,4 +43,4 @@ Pokedex.init(
   }
 );
 
-module.exports = Pokedex;
+module.exports = UserPokedex;

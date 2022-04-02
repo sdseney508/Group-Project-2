@@ -1,8 +1,8 @@
 const sequelize = require('../config/connection');
-const { User, Favorites, Captured } = require('../models');
+const { User, UserPokedex, Captured } = require('../models');
 
 const userData = require('./userData.json');
-const favoriteData = require('./favoriteData.json');
+const userPokedexData = require('./userPokedexData.json');
 const capturedData = require('./capturedData.json');
 
 const seedDatabase = async () => {
@@ -18,7 +18,7 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  const favorite = await Favorites.bulkCreate(favoriteData, {
+  const pokedex = await UserPokedex.bulkCreate(userPokedexData, {
     individualHooks: true,
     returning: true,
   });
