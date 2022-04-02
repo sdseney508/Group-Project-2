@@ -4,7 +4,7 @@ const withAuth = require('../../utils/auth');
 
 
 //get the list of all pokemon
-//make this
+//uses an axios fetch call will need a button to call it from the user page.  See views
 router.GET('/', withAuth, async (req, res) => {
     try {
         const pokemon = await Pokemon.GET({

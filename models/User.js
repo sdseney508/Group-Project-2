@@ -42,6 +42,12 @@ User.init(
         len: [5],
       },
     },
+
+    profile_public: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
+    },
   
     hooks: {
       beforeCreate: async (newUserData) => {
