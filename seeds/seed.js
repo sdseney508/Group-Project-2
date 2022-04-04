@@ -19,10 +19,10 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  // const pokedex = await UserPokedex.bulkCreate(userPokedexData, {
-  //   individualHooks: true,
-  //   returning: true,
-  // });
+  const pokedex = await UserPokedex.bulkCreate(userPokedexData, {
+    individualHooks: true,
+    returning: true,
+  });
 
   const pokeName = await PokeName.bulkCreate(PokeNameData, {
     individualHooks: true,
