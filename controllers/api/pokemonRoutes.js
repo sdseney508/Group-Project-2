@@ -26,6 +26,7 @@ router.get('/:id',  async (req, res) => {
         console.log(pokemon);
         res.status(200).json(pokemon);
     } catch (err) {
+        console.log(err);
         res.status(400).json(err);
     }
 });

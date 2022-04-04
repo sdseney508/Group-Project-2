@@ -1,7 +1,7 @@
 Pokemon = require('pokemon.js');
 Pokemon.setLanguage('english');
 const axios = require('axios');
-
+const sw = require('./poketype');
 let url = `https://pokeapi.co/api/v2/pokemon/`;
 let gen_url = 'https://pokeapi.co/api/v2/pokemon-species/';
 //initialize global variable
@@ -49,19 +49,8 @@ const get_one = async (id) => {
             //first strengthes then weaknesses
             //get the type of pokemon
             let ptype = types[i];
-
-            // pass that to the api via a string literal, this is a different api lpocation than the 
-            //overall pokemon one
-            let type_url = `https://pokeapi.co/api/v2/type/${ptype}`
-
-            await axios.get(type_url).then(function (response) {
-                // get strengths / weaknesses by looping through the double damage to array
-                for (let i = 0; i < response.data.damage_relations.double_damage_to.length; i++) {
-                    strengths[i] = response.data.damage_relations.double_damage_to[i].name;
-                    weaknesses[i] = response.data.damage_relations.double_damage_from[i].name;
-
-                };
-            });
+            strengths = [...strengths, ...sw.strengths(ptype)];
+            weaknesses = [...weaknesses, ...sw.weaknesses(ptype)];
         };
     });
 
@@ -85,7 +74,7 @@ const get_one = async (id) => {
 };
 
 const get_all = async () => {
-    for (i = 1; i < 6; i++) {
+    for (i = 1; i < 9; i++) {
         let id = Math.floor(Math.random() * 898) + 1;
         if (pid ===0){
             pid = id;
@@ -111,11 +100,6 @@ const get_all = async () => {
             for (k = 0; k < (response.data.abilities).length; k++) {
                 abilities[k] = response.data.abilities[k].ability.name;
             };
-        });
-
-        g_url = gen_url + id;
-        await axios.get(g_url).then(function (response) {
-            generation = response.data.generation.name;
         });
 
         poke_objects.push({ name, types, abilities, image_url });
