@@ -1,0 +1,16 @@
+<article class = 'pokemon-details'>
+    <div class='title'>
+        <a href='/pokemon/{{pokemon.poke_id}}' target='blank'>
+            {{pokemon.name}}
+            <span class='pokemon-info'>
+                Captured on {{format_date date_caught}}
+            </span>
+        </a>
+    </div>
+
+    <div class='pokemon-info'>
+        {{pokemon.types}}
+        {{pokemon.pokemon_description}}
+        {{pokemon.abilities}}
+    </div>
+</article>
