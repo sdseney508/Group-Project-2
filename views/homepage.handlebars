@@ -1,22 +1,27 @@
-<!-- Loop over each object in the projects array -->
-{{#each pokemons as |pokemon| }}
-<div class="flex-row ">
-  <div class="flex-column justify-space-around">
-    <div class="pokemon-title">
-      <h2>
-        <a href="/pokemon/{{pokemon.poke_id}}">{{pokemon.name}}</a>
-        <p>{{pokemon.types}}</p>
-        <p>{{pokemon.abilities}}</p>
-        <img src="{{pokemon.image_url}}" alt="">
-        {{!-- double check how to reference a user_id as part of a query --}}
-        {{!-- Caught by {{pokemon.user_id}} on {{pokemon.date_created}} --}}
-      </h2>
-    </div>
-    <div class="pokemon-body">
-      <p>
-        {{pokemon.pokemon_description}}
-      </p>
+<div class="container">
+  <div class="row">
+    <div class="col-12 d-flex flex-wrap justify-content-around">
+
+      {{#each pokemons as |pokemon| }}
+      <div class="card mb-5" style="width: 18rem;">
+        <div class="card-header">
+          <img src={{pokemon.image_url}} class="card-img-top" alt="{{pokemon.name}}">
+          <h3 class="card-title">{{pokemon.name}}</h3>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Id: {{pokemon.p_id}}</li>
+            <li class="list-group-item">Generation: {{pokemon.generation}}</li>
+            <li class="list-group-item">Types: {{pokemon.types}}</li>
+            <li class="list-group-item">Abilities: {{pokemon.abilities}}</li>
+            <li class="list-group-item">Strengths: {{pokemon.strengths}}</li>
+            <li class="list-group-item">Weaknesses: {{pokemon.weaknesses}}</li>
+            <li class="list-group-item">Weight: {{pokemon.weight}}</li>
+          </ul>
+        </div>
+      </div>
+      {{/each}}
+        
     </div>
   </div>
 </div>
-{{/each}}
