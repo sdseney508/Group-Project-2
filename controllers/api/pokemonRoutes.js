@@ -26,12 +26,13 @@ router.get('/:id',  async (req, res) => {
         console.log(pokemon);
         res.status(200).json(pokemon);
     } catch (err) {
+        console.log(err);
         res.status(400).json(err);
     }
 });
 
 //tag a favorite
-router.put('/favorite', withAuth, async (req, res) => {
+router.put('/favorite/:id', withAuth, async (req, res) => {
     try {
         const updatedFavorite = await UserPokedex.update(
             { favorite: true },
@@ -47,7 +48,7 @@ router.put('/favorite', withAuth, async (req, res) => {
 });
 
 //tag a captured
-router.post('/captured', withAuth, async (req, res) => {
+router.post('/captured/:id', withAuth, async (req, res) => {
     try {
         const createdCaptured = await Captured.create(
             {...req.body, user_id: req.session.user_id,}

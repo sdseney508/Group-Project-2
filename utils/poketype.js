@@ -1,5 +1,3 @@
-let strengths = [];
-let weaknesses = [];
 
 const poke_type = [{ "name": "Normal", "immunes": ["Ghost"], "weaknesses": ["Rock", "Steel"], "strengths": [] },
 { "name": "Fire", "immunes": [], "weaknesses": ["Fire", "Water", "Rock", "Dragon"], "strengths": ["Grass", "Ice", "Bug", "Steel"] },
@@ -20,31 +18,20 @@ const poke_type = [{ "name": "Normal", "immunes": ["Ghost"], "weaknesses": ["Roc
 { "name": "Steel", "immunes": [], "weaknesses": ["Fire", "Water", "Electric", "Steel"], "strengths": ["Ice", "Rock", "Fairy"] },
 { "name": "Fairy", "immunes": [], "weaknesses": ["Fire", "Poison", "Steel"], "strengths": ["Fighting", "Dragon", "Dark"] }]
 
-// const strengths = poke_type.find(({name}) => name ===  )
-
-// const sAndW = (p_type) => {
-//     let s_and_w = poke_type.find(function (type) {
-//         if (type.name == p_type)
-//             return true;
-//     });
-//     strengths = s_and_w.strengths;
-//     weaknesses = s_and_w.weaknesses;
-//     return strengths, weaknesses;
-// };
 
 module.exports = { 
     strengths: 
-        s_and_w = (p_type) => {
-            poke_type.find(function (type) {
-            if (type.name == p_type)
+        (p_type) => {
+            let s_and_w = poke_type.find(function (type) {
+            if (type.name.toLowerCase() == p_type.toLowerCase())
                 return true;
-        });
+            });
         return s_and_w.strengths;
     },
     weaknesses: (p_type) => {
         let s_and_w = poke_type.find(function (type) {
-            if (type.name == p_type)
+            if (type.name.toLowerCase() == p_type.toLowerCase())
                 return true;
         });
-        return s_and_w;
+        return s_and_w.weaknesses;
     },};
