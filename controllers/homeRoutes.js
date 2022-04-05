@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { UserPokedex, User } = require('../models');
+const { UserPokedex, User, Captured } = require('../models');
 const withAuth = require('../utils/auth');
 const pokehelper = require('../utils/pokehelper');
 
@@ -20,14 +20,36 @@ router.get('/', async (req, res) => {
 });
 
 
+router.get('/dashboard', withAuth, async (req, res) => {
+  try {
+    // pull onlypokemon from the user logged in
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: UserPokedex },
+        { model: Captured
+        }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('dashboard', {
+      user,
+      logged_in: true
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 router.get('/pokemon/:id', async (req, res) => {
   try {
     // Get all pokemon associated with the logged in user name of the blog creator
-    const pokemons = await pokehelper.get_one(req.params.id);
-    console.log(pokemons);
+    const pokemon = await pokehelper.get_one(req.params.id);
+    console.log(pokemon);
     // Pass serialized data and session flag into template
     res.render('pokemondetails', {
-      pokemons,
+      pokemon,
       logged_in: req.session.logged_in
     });
   } catch (err) {

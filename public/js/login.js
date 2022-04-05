@@ -15,7 +15,7 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       // If successful, redirect the browser to the homepage but with a logout button instead of login
-      document.location.replace('/homepage');
+      document.location.replace('homepage');
     } else {
       alert(response.statusText);
     }
@@ -39,7 +39,7 @@ const signupFormHandler = async (event) => {
     if (response.ok) {
       // If successful, redirect the browser to the homepage but with a logout button instead of login; use witAuth
       //for status
-      document.location.replace('/homepage');
+      document.location.replace('homepage');
     } else {
       alert(response.statusText);
     }
