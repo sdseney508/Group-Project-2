@@ -32,10 +32,9 @@ router.get('/:id',  async (req, res) => {
 });
 
 //tag a favorite
-router.put('/favorite/:id', withAuth, async (req, res) => {
+router.post('/favorite/:id', withAuth, async (req, res) => {
     try {
-        const updatedFavorite = await UserPokedex.update(
-            { favorite: true },
+        const updatedFavorite = await UserPokedex.create(
             {
                 where: { user_id: req.session.user_id }
             }
@@ -50,9 +49,10 @@ router.put('/favorite/:id', withAuth, async (req, res) => {
 //tag a captured
 router.post('/captured/:id', withAuth, async (req, res) => {
     try {
-        const createdCaptured = await Captured.create(
-            {...req.body, user_id: req.session.user_id,}
-        );
+        const createdCaptured = await Captured.create({
+            ...req.body, 
+            user_id: req.session.user_id,
+        });
 
         res.status(200).json(createdCaptured);
     } catch (err) {
@@ -65,7 +65,7 @@ router.delete('/favorite/:name', withAuth, async (req, res) => {
     try {
         const favoriteData = await UserPokedex.destroy({
             where: {
-                namw: req.params.name,
+                name: req.params.name,
                 user_id: req.session.user_id,
             },
         });

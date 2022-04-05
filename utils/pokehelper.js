@@ -27,8 +27,10 @@ const get_one = async (id) => {
     let image_url = '';
     let evo_pic = [];
     let p_url = url + id;
+    let p_id;
 
     await axios.get(p_url).then(async function (response) {
+        p_id = response.data.id;
         name = response.data.name;
         weight = response.data.weight;
         base_hp = response.data.stats[0].base_stat;
@@ -39,11 +41,11 @@ const get_one = async (id) => {
 
         for (let i = 0; i < (response.data.types).length; i++) {
             types[i] = response.data.types[i].type.name;
-        };
+        }
 
         for (let i = 0; i < (response.data.abilities).length; i++) {
             abilities[i] = response.data.abilities[i].ability.name;
-        };
+        }
 
         //sequence through the types and create an arrayof types they are strong and weak against
         for (let i = 0; i < (types).length; i++) {
@@ -70,7 +72,7 @@ const get_one = async (id) => {
         generation = response.data.generation.name;
     });
 
-    poke_object = { name, types, weight, abilities, weaknesses, strengths, base_attack, base_defense, speed, evolutions, evo_pic, generation };
+    poke_object = { name, p_id, types, weight, abilities, weaknesses, strengths, base_hp, base_attack, base_defense, speed, evolutions, evo_pic, generation, image_url };
     return poke_object;
 };
 
@@ -78,34 +80,34 @@ const get_all = async () => {
     let poke_objects = [];
     for (i = 1; i < 9; i++) {
         let id = Math.floor(Math.random() * 898) + 1;
-        if (pid ===0){
+        if (pid === 0) {
             pid = id;
-        } else if (pid === id){
+        } else if (pid === id) {
             let id = Math.floor(Math.random() * 898) + 1;
             pid = id;
         }
         let name = '';
-        let generation = [];
         let types = [];
         let abilities = [];
         let image_url = '';
         let p_url = url + id;
+        let p_id;
 
         await axios.get(p_url).then(async function (response) {
             name = response.data.name;
             image_url = response.data.sprites.front_default;
-
+            p_id = response.data.id;
             for (j = 0; j < (response.data.types).length; j++) {
                 types[j] = response.data.types[j].type.name;
-            };
+            }
 
             for (k = 0; k < (response.data.abilities).length; k++) {
                 abilities[k] = response.data.abilities[k].ability.name;
-            };
+            }
         });
 
-        poke_objects.push({ name, types, abilities, image_url });
-        
+        poke_objects.push({ name, p_id, types, abilities, image_url });
+
     }
     return poke_objects;
 };
