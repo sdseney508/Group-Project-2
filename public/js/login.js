@@ -10,12 +10,12 @@ const loginFormHandler = async (event) => {
     const response = await fetch('/api/users/login', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json' }
     });
 
     if (response.ok) {
       // If successful, redirect the browser to the homepage but with a logout button instead of login
-      document.location.replace('/homepage');
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }
@@ -33,13 +33,13 @@ const signupFormHandler = async (event) => {
     const response = await fetch('/api/users/', {
       method: 'POST',
       body: JSON.stringify({ name, email, password }),
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json' }
     });
 
     if (response.ok) {
       // If successful, redirect the browser to the homepage but with a logout button instead of login; use witAuth
       //for status
-      document.location.replace('/homepage');
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }

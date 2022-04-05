@@ -9,11 +9,11 @@ UserPokedex.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: true
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -25,13 +25,13 @@ UserPokedex.init(
     },
     custom_name: {
       type: DataTypes.STRING,
-      defaultValue: this.name,
+      defaultValue: this.name
     },
 
     favorite: {
       type: DataTypes.BOOLEAN,
       defaultValue: true
-    },
+    }
 
   },
   {
@@ -39,7 +39,7 @@ UserPokedex.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'userpokedex',
+    modelName: 'userpokedex'
   }
 );
 
