@@ -12,45 +12,92 @@ body {
   justify-content: center;
 }
 
-.poke-header{
+.poke-header {
   padding: 20px;
   margin-top: 20px;
 }
 
-.poke-search form{
+.poke-search form {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 25px;
+  padding-left: 15%;
+  padding-bottom: 25px;
 }
 
-.poke-search input{
+.poke-search input {
   height: 60px;
-  width: 500px;
+  width: 450px;
   justify-content: center;
   border-radius: 5px;
   border: none;
   outline: none;
 }
 
-.pokeball{
+.pokeball {
   background: transparent;
   border: none;
   outline: none;
-  cursor: pointer;
-  position: fixed;
-  right: 27%;
-  top: 15%;
 }
 
-#login{
+#login {
   justify-content: center;
   margin: 15px;
 }
 
-.btn{
+.btn {
   margin: 5px;
 }
+
+.wrapper {
+  display: flex;
+  position: relative;
+}
+
+.wrapper .sidebar {
+  width: 400px;
+  height: 50%;
+  padding-left: 5px;
+  position: fixed;
+}
+
+.wrapper .sidebar h2 {
+  font-size: 15px;
+  justify-content: center;
+}
+
+.wrapper .sidebar ul li {
+  padding: 15px;
+}
+
+.wrapper .sidebar ul li a {
+  color: black;
+  /*display: block;*/
+  font-size: 10px;
+}
+
+.wrapper .sidebar ul li:hover {
+  width: 50%;
+  background-color: #847da8;
+}
+
+.wrapper .sidebar ul li:hover a {
+  color: #fff;
+}
+
+.wrapper .main_content {
+  width: 100%;
+  margin-left: 400px;
+  padding-top: 50px;
+}
+
+.wrapper .main_content h2 {
+  font-size: 25px;
+  padding-left: 50px;
+  padding-bottom: 20px;
+}
+
+
 
 
 .no-button {

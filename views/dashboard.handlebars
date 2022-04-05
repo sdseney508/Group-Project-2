@@ -1,8 +1,34 @@
 <div class="row">
-  <div class="col-auto">
+  <div class="col-12 d-flex flex-wrap justify-content-around">
+    <h2>Gotta Catch 'Em All! </h2>
+    {{#each pokemons as |pokemon| }}
+    <div class="card mb-4" style="width: 18rem;">
+      <div class="card-header">
+        <img src={{pokemon.image_url}} class="card-img-top" alt="{{pokemon.name}}">
+        <h3 class="card-title">{{pokemon.name}}</h3>
+      </div>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Id: {{pokemon.p_id}}</li>
+          <li class="list-group-item">Generation: {{pokemon.generation}}</li>
+          <li class="list-group-item">Types: {{pokemon.types}}</li>
+          <li class="list-group-item">Abilities: {{pokemon.abilities}}</li>
+          <li class="list-group-item">Strengths: {{pokemon.strengths}}</li>
+          <li class="list-group-item">Weaknesses: {{pokemon.weaknesses}}</li>
+          <li class="list-group-item">Weight: {{pokemon.weight}}</li>
+        </ul>
+      </div>
+    </div>
+    {{/each}}
+
+  </div>
+
+</div>
+
+
+<!--div class="col-auto">
     <h2>Welcome to The Collection {{name}}!</h2>
   </div>
-</div>
 
 <div class="row mt-4">
   <div class="col-md-6">
@@ -44,6 +70,6 @@
     {{/each}}
   </div>
   {{/if}}
-</div>
+</div-->
 
 <script src="./js/api_call.js"></script>
