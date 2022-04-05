@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class UserPokedex extends Model { };
+class UserPokedex extends Model {}
 
 UserPokedex.init(
   {
@@ -30,7 +30,7 @@ UserPokedex.init(
 
     favorite: {
       type: DataTypes.BOOLEAN,
-      defaultValue: false
+      defaultValue: true
     },
 
   },
