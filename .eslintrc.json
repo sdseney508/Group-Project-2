@@ -31,8 +31,7 @@
     "indent": ["error", 2],
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
-    "radix": "off",
-    "comma-dangle": ["error", "never"]
+    "radix": "off"
   },
   "extends": ["prettier"]
 }
