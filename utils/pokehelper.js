@@ -5,12 +5,13 @@ const sw = require('./poketype');
 let url = `https://pokeapi.co/api/v2/pokemon/`;
 let gen_url = 'https://pokeapi.co/api/v2/pokemon-species/';
 //initialize global variable
-let poke_object = [];
-let poke_objects = [];
+
+
 //stores the previous id for the get_all function to prevent the rare occurence of showing the same pokemon twice
 let pid = 0;
 
 const get_one = async (id) => {
+    let poke_object = [];
     let name = '';
     let evolutions = [];
     let generation = [];
@@ -74,6 +75,7 @@ const get_one = async (id) => {
 };
 
 const get_all = async () => {
+    let poke_objects = [];
     for (i = 1; i < 9; i++) {
         let id = Math.floor(Math.random() * 898) + 1;
         if (pid ===0){
