@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Captured extends Model {};
+class Captured extends Model {}
 
 Captured.init(
   {
@@ -16,28 +16,28 @@ Captured.init(
       allowNull: false,
     },
     game_caught: {
-        type: DataTypes.STRING,
-        allowNull: true
+      type: DataTypes.STRING,
+      allowNull: true
     },
     date_caught: {
-        type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW
     },
     custom_name: {
       type: DataTypes.STRING,
       defaultValue: this.name,
     },
     user_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'user',
-            key: 'id'
-        }
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
     },
   },
   {
- 
+
     sequelize,
     timestamps: false,
     freezeTableName: true,
