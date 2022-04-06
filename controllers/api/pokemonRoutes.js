@@ -12,7 +12,10 @@ router.get('/',  async (req, res) => {
     //make this a get_all
     const pokemons = await pokehelper.get_all();
     console.log(pokemons);
-    res.status(200).json(pokemons);
+    res.render('homepage', {
+      pokemons,
+      logged_in: req.session.logged_in
+    });
   } catch (err) {
     res.status(400).json(err);
   }
@@ -22,9 +25,12 @@ router.get('/',  async (req, res) => {
 router.get('/:id',  async (req, res) => {
   try {
     //make this get_one
-    const pokemon = await pokehelper.get_one(req.params.id);
-    console.log(pokemon);
-    res.status(200).json(pokemon);
+    const pokemons = await pokehelper.get_one(req.params.id);
+    console.log(pokemons);
+    res.render('pokemondetails', {
+      pokemons,
+      logged_in: req.session.logged_in
+    });
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
@@ -40,7 +46,10 @@ router.post('/favorite/:id', withAuth, async (req, res) => {
       }
     );
 
-    res.status(200).json(updatedFavorite);
+    res.render('pokemondetails', {
+      pokemon,
+      logged_in: req.session.logged_in
+    });
   } catch (err) {
     res.status(400).json(err);
   }
@@ -54,7 +63,10 @@ router.post('/captured/:id', withAuth, async (req, res) => {
       user_id: req.session.user_id,
     });
 
-    res.status(200).json(createdCaptured);
+    res.render('pokemondetails', {
+      pokemon,
+      logged_in: req.session.logged_in
+    });
   } catch (err) {
     res.status(400).json(err);
   }
