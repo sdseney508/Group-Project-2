@@ -27,7 +27,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
       attributes: { exclude: ['password'] },
       include: [{ model: UserPokedex },
         { model: Captured
-        }],
+        }]
     });
 
     const user = userData.get({ plain: true });

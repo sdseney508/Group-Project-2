@@ -7,8 +7,8 @@ const newFavoriteHandler = async (event) => {
     const response = await fetch(`/api/pokemon/favorite/${pokemon_name}`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
-      },
+        'Content-Type': 'application/json'
+      }
     });
 
     if (response.ok) {

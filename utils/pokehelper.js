@@ -2,7 +2,7 @@ Pokemon = require('pokemon.js');
 Pokemon.setLanguage('english');
 const axios = require('axios');
 const sw = require('./poketype');
-let url = `https://pokeapi.co/api/v2/pokemon/`;
+let url = 'https://pokeapi.co/api/v2/pokemon/';
 let gen_url = 'https://pokeapi.co/api/v2/pokemon-species/';
 //initialize global variable
 
@@ -70,7 +70,7 @@ const get_one = async (id) => {
     generation = response.data.generation.name;
   });
 
-  poke_object = { name, types, weight, abilities, weaknesses, strengths, base_hp, base_attack, base_defense, speed, evolutions, evo_pic, generation };
+  poke_object = { name, types, weight, image_url, abilities, weaknesses, strengths, base_hp, base_attack, base_defense, speed, evolutions, evo_pic, generation };
   return poke_object;
 };
 

@@ -5,12 +5,12 @@ const PokeName = require('./PokeNames');
 
 User.hasMany(Captured, {
   foreignKey: 'user_id',
-  onDelete: 'CASCADE',
+  onDelete: 'CASCADE'
 });
 
 User.hasMany(UserPokedex, {
   foreignKey: 'user_id',
-  onDelete: 'CASCADE',
+  onDelete: 'CASCADE'
 });
 
 

@@ -50,7 +50,7 @@ router.post('/favorite/:id', withAuth, async (req, res) => {
 router.post('/captured/', withAuth, async (req, res) => {
     try {
         const newCaptured = await Captured.create({
-            ...req.body, 
+            ...req.body,
             user_id: req.session.user_id,
         });
 
