@@ -1,6 +1,6 @@
+<h2>Gotta Catch 'Em All! </h2>
 <div class="row">
   <div class="col-12 d-flex flex-wrap justify-content-around">
-    <h2>Gotta Catch 'Em All! </h2>
     {{#each pokemons as |pokemon| }}
     <div class="card mb-4" style="width: 18rem;">
       <div class="card-header">
@@ -17,6 +17,9 @@
           <li class="list-group-item">Weaknesses: {{pokemon.weaknesses}}</li>
           <li class="list-group-item">Weight: {{pokemon.weight}}</li>
         </ul>
+        <div class="card-body">
+          <button class="add-btn" data-name="{{pokemon.name}}" data-id="{{pokemon.p_id}}">Add to Collection</button>
+        </div>
       </div>
     </div>
     {{/each}}
@@ -71,4 +74,5 @@
   {{/if}}
 </div-->
 
-<script src="./js/api_call.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="./js/dashboard.js"></script>

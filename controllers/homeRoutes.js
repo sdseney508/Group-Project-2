@@ -29,8 +29,11 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
+    const pokemons = await pokehelper.get_all();
+
     res.render('dashboard', {
       ...user,
+      pokemons,
       logged_in: true
     });
   } catch (err) {

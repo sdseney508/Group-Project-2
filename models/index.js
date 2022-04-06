@@ -8,6 +8,10 @@ User.hasMany(Captured, {
   onDelete: 'CASCADE'
 });
 
+Captured.belongsTo(User, {
+  foreignKey: 'user_id'
+});
+
 User.hasMany(UserPokedex, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
