@@ -36,6 +36,7 @@ const get_one = async (id) => {
     base_defense = response.data.stats[2].base_stat;
     speed = response.data.stats[5].base_stat;
     image_url = response.data.sprites.front_default;
+    p_id = response.data.id;
 
     for (let i = 0; i < (response.data.types).length; i++) {
       types[i] = response.data.types[i].type.name;
@@ -70,7 +71,7 @@ const get_one = async (id) => {
     generation = response.data.generation.name;
   });
 
-  poke_object = { name, types, weight, image_url, abilities, weaknesses, strengths, base_hp, base_attack, base_defense, speed, evolutions, evo_pic, generation };
+  poke_object = { name, p_id, image_url, types, weight, abilities, weaknesses, strengths, base_hp, base_attack, base_defense, speed, evolutions, evo_pic, generation };
   return poke_object;
 };
 

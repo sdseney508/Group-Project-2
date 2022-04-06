@@ -4,20 +4,23 @@
     "game_caught": "Red",
     "date_caught": "1 Jan 2022",
     "custom_name": "Bulbie",
-    "user_id": 1
+    "user_id": 1,
+    "poke_id": 1
   },
   {
     "name": "pikachu",
     "game_caught": "Red",
     "date_caught": "1 Jan 2022",
     "custom_name": "pik",
-    "user_id": 2
+    "user_id": 2,
+    "poke_id": 25
   },
   {
     "name": " Venusaur",
     "game_caught": "Red",
     "date_caught": "1 Jan 2022",
     "custom_name": "Venus",
-    "user_id": 3
+    "user_id": 3,
+    "poke_id": 3
   }
 ]

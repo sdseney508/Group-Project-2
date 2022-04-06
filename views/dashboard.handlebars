@@ -35,10 +35,10 @@
     {{#each pokemons as |pokemon|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/pokemon/{{pokemon.poke_id}}">{{pokemon.name}}</a></h4>
+        <h4><a href="/pokemon/{{pokemon.name}}">{{pokemon.name}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{pokemon.poke_id}}">Delete</button>
+        <button class="btn btn-sm btn-danger" data-id="{{pokemon.name}}">Delete</button>
       </div>
     </div>
     {{/each}}
@@ -46,4 +46,4 @@
   {{/if}}
 </div>
 
-<script src="./js/api_call.js"></script>
+<script src="./js/dashboard.js"></script>
