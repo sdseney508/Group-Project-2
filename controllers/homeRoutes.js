@@ -7,10 +7,10 @@ router.get('/', async (req, res) => {
   try {
 
     //when you hit the homepage, render 8 pokemon, dont make them log in
-    const pokemons = await pokehelper.get_all();
+    const all_pokemon = await pokehelper.get_all();
 
     res.render('homepage', {
-      pokemons,
+      all_pokemon,
       logged_in: req.session.logged_in
     });
   } catch (err) {
