@@ -11,22 +11,22 @@ const seedDatabase = async () => {
 
   const users = await User.bulkCreate(userData, {
     individualHooks: true,
-    returning: true,
+    returning: true
   });
 
   const captured = await Captured.bulkCreate(capturedData, {
     individualHooks: true,
-    returning: true,
+    returning: true
   });
 
   const pokedex = await UserPokedex.bulkCreate(userPokedexData, {
     individualHooks: true,
-    returning: true,
+    returning: true
   });
 
   const pokeName = await PokeName.bulkCreate(PokeNameData, {
     individualHooks: true,
-    returning: true,
+    returning: true
   });
 
   process.exit(0);

@@ -9,11 +9,15 @@ Captured.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: true
+    },
+    poke_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     game_caught: {
       type: DataTypes.STRING,
@@ -25,7 +29,7 @@ Captured.init(
     },
     custom_name: {
       type: DataTypes.STRING,
-      defaultValue: this.name,
+      defaultValue: this.name
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -34,7 +38,7 @@ Captured.init(
         model: 'user',
         key: 'id'
       }
-    },
+    }
   },
   {
 
@@ -42,7 +46,7 @@ Captured.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'captured',
+    modelName: 'captured'
   }
 );
 

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { UserPokedex, User } = require('../models');
+const { UserPokedex, User, Captured } = require('../models');
 const withAuth = require('../utils/auth');
 const pokehelper = require('../utils/pokehelper');
 
@@ -19,6 +19,27 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/dashboard', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Captured }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    const pokemons = await pokehelper.get_all();
+
+    res.render('dashboard', {
+      ...user,
+      pokemons,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 router.get('/pokemon/:id', async (req, res) => {
   try {
@@ -40,7 +61,7 @@ router.get('/pokemon/:id', async (req, res) => {
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('dashboard');
+    res.redirect('/dashboard');
     return;
   }
 

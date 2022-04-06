@@ -47,7 +47,7 @@ const get_one = async (id) => {
       abilities[i] = response.data.abilities[i].ability.name;
     }
 
-    //sequence through the types and create an arrayof types they are strong and weak against
+    //sequence through the types and create an array of types they are strong and weak against
     for (let i = 0; i < (types).length; i++) {
       //first strengthes then weaknesses
       //get the type of pokemon
