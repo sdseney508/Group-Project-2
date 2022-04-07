@@ -82,12 +82,11 @@ router.delete('/favorite/:name', withAuth, async (req, res) => {
       },
     });
 
-    if (!favoriteData) {
-      res.status(404).json({ message: "No pokemon found to delete from this user's Pokedex.  Please try again." });
-      return;
-    }
+    res.render('dashboard', {
+      pokemons,
+      logged_in: req.session.logged_in
+    });
 
-    res.status(200).json(favoriteData);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -109,7 +108,10 @@ router.delete('/captured/:name', withAuth, async (req, res) => {
       return;
     }
 
-    res.status(200).json(capturedData);
+    res.render('dashboard', {
+      pokemons,
+      logged_in: req.session.logged_in
+    });
   } catch (err) {
     res.status(500).json(err);
   }
