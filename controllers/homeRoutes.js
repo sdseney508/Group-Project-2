@@ -5,15 +5,22 @@ const pokehelper = require('../utils/pokehelper');
 
 router.get('/', async (req, res) => {
   try {
-
+    if (req.session.logged_in) {
+      res.render('dashboard');
+    }
+    else {
+      console.log('in homeroutes');
     //when you hit the homepage, render 8 pokemon, dont make them log in
-    const all_pokemon = await pokehelper.get_all();
+      const all_pokemon = await pokehelper.get_all();
+      console.log(all_pokemon);
 
-    res.render('homepage', {
+      res.render('homepage', {
       all_pokemon,
       logged_in: req.session.logged_in
     });
-  } catch (err) {
+    } 
+  }
+  catch (err) {
     console.log(err);
     res.status(400).json(err);
   }
@@ -57,6 +64,14 @@ router.get('/pokemon/:id', async (req, res) => {
   }
 });
 
+router.get('/create_account', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (!req.session.logged_in) {
+    res.render('create_account');
+    return;
+  }
+  res.render('dashboard');
+});
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route

@@ -7,7 +7,7 @@ const pokehelper = require('../../utils/pokehelper');
 // route:  /api/pokemon
 //uses an axios fetch call  all the pokemon from the pokedex2 api
 //will need a button to call it from the user page.  See views
-router.get('/',  async (req, res) => {
+router.get('/captured',  async (req, res) => {
   try {
     //make this a get_all
     const pokemons = await pokehelper.get_all();
@@ -22,7 +22,7 @@ router.get('/',  async (req, res) => {
 });
 
 //look for info about a certain pokemon, have to readd withAuth
-router.get('/:id',  async (req, res) => {
+router.get('/favorite',  async (req, res) => {
   try {
     //make this get_one
     const pokemons = await pokehelper.get_one(req.params.id);
