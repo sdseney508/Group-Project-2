@@ -5,7 +5,7 @@
     <div class="card mb-4" style="width: 18rem;">
       <div class="card-header">
         <img src={{pokemon.image_url}} class="card-img-top" alt="{{pokemon.name}}">
-         <a class="card-title" href="/api/pokemon/{{pokemon.name}}">{{pokemon.name}}</a>
+         <a class="card-title" href="/pokemon/{{pokemon.name}}">{{pokemon.name}}</a>
       </div>
       <div class="card-body">
         <ul class="list-group list-group-flush">
@@ -22,53 +22,6 @@
 
   </div>
 </div>
-
-
-<!--div class="col-auto">
-    <h2>Welcome to The Collection {{name}}!</h2>
-  </div>
-
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Add to The Collection</h3>
-
-    <form class="form new-pokemon-card">
-      <div class="form-group">
-        <label for="pokemon-name">Pokemon:</label>
-        <input class="form-input" type="text" id="pokemon-name" name="pokemon-name" />
-      </div>
-      <div class="form-group">
-        <label for="pokemon-desc">Description:</label>
-        <textarea class="form-input" id="pokemon-desc" name="pokemon-desc"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Add</button>
-      </div>
-    </form>
-  </div>
-
-  {{#if pokemon.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Collection:</h3>
-
-    <div class="poke-search">
-      <form id="form"><input type="text" id="search" class="search" placeholder="Search Pokémon"></form>
-      <button class="pokeball"><i class="nes-pokeball"></i></button>
-    </div>
-
-    {{#each pokemons as |pokemon|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/pokemon/{{pokemon.poke_id}}">{{pokemon.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{pokemon.poke_id}}">Delete</button>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
-</div-->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="./js/dashboard.js"></script>

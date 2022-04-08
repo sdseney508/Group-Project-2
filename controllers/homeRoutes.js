@@ -6,7 +6,7 @@ const pokehelper = require('../utils/pokehelper');
 router.get('/', async (req, res) => {
   try {
     if (req.session.logged_in) {
-      res.render('dashboard');
+      res.redirect('/dashboard');
     }
     else {
       console.log('in homeroutes');
@@ -70,7 +70,7 @@ router.get('/create_account', (req, res) => {
     res.render('create_account');
     return;
   }
-  res.render('dashboard');
+  res.redirect('/dashboard');
 });
 
 router.get('/login', (req, res) => {

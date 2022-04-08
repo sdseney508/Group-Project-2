@@ -1,22 +1,26 @@
 
 {{!-- make this the display of all the pokemon in the game.  Make the name of the pokemon a hyperlink so it can be added to the users favorites or caught lists. --}}
 
-<div class="flex-row ">
-  <div class="flex-column justify-space-around">
-    <div class="pokemon-title">
-      <h2>
-        <a href="/pokemon/{{pokemons.name}}" id="pokename">{{pokemons.name}}</a>
-        <form class="favorite_captured">
-          <label for="favorite">Make a Favorite?</label><input type="checkbox" name="favorite" id="favorite">
-          <label for="favorite">Captured?</label><input type="checkbox" name="captured" id="captured">
-        </form>
-        <p>{{pokemons.types}}</p>
-        <p>{{pokemons.abilities}}</p>
-        <img src="{{pokemons.image_url}}" alt="">
-        {{!-- double check how to reference a user_id as part of a query --}}
-      </h2>
+<div class="container">
+  <div class="row">
+    <div class="col-12 d-flex flex-wrap justify-content-around">
+
+
+      <div class="card mb-5" style="width: 18rem;">
+        <div class="card-header">
+          <img src={{pokemon.image_url}} class="card-img-top" alt="{{pokemon.name}}">
+          <a class="card-title" href="/pokemon/{{pokemon.name}}">{{pokemon.name}}</a>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Id: {{pokemon.p_id}}</li>
+            <li class="list-group-item">Types: {{pokemon.types}}</li>
+            <li class="list-group-item">Abilities: {{pokemon.abilities}}</li>
+          </ul>
+        </div>
+      </div>
+        
     </div>
   </div>
 </div>
-
 <script src="/js/pokemon.js"></script>
