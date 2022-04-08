@@ -25,19 +25,27 @@
     <div class="sidebar">
       <!-- Conditionally render login or logout links -->
 
-      <h2>Welcome! <i class="nes-ash small"></i></h2>
-      <ul style="list-style: none;">
-        {{#if logged_in}}
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <li><a href="/create_account"></i>Create An Account to Start A Poké Collection</a></li>
-        <li><a href="/login">Login</a></li>
-        {{/if}}
-      </ul>
-      <div class="poke-search">
-        <form id="form"><input type="text" id="search" class="search" placeholder="Search Pokémon"><button
-            class="pokeball" id="pokeball"><i class="nes-pokeball"></i></button>
-        </form>
+    {{!-- <div class="wrapper"> --}}
+      <div class="sidebar">
+        <!-- Conditionally render login or logout links -->
+        <nav>
+          {{#if logged_in}}
+          <h2>Welcome, {{name}}! <i class="nes-ash small"></i></h2>
+          <button class="no-button" id="logout">Logout</button>
+          {{else}}
+          <h2>Welcome! <i class="nes-ash small"></i></h2>
+          <ul style="list-style: none;">
+            <li><a href="/create_account"></i>Create An Account to Start A Poké Collection</a></li>
+            <li><a href="/login">Login</a></li>
+          </ul>
+          {{/if}}
+          <div class="poke-search">
+            <form id="form">
+              <input type="text" id="search" class="search" placeholder="Search Pokémon">
+              <button class="pokeball"><i class="nes-pokeball"></i></button>
+            </form>
+          </div>
+        </nav>
       </div>
 
     </div>
