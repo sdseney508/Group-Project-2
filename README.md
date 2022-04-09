@@ -34,7 +34,7 @@ Ultimate Pokedex
 from there launch: localhost:3001 from your broswer or test the app in insomnia.
 
 The app is also fully deployed at:
-https://unh-pokedex.herokuapp.com/
+https://unh-pokedex-final.herokuapp.com/
 
  ## Usage
  None
