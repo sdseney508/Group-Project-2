@@ -1,12 +1,12 @@
 const addToCaptured = async (event) => {
   event.preventDefault();
 
-  const poke_id = $(event.target).data('id');
+  const p_id = $(event.target).data('id');
   const name = $(event.target).data('name');
 
   const response = await fetch('/api/captured', {
     method: 'POST',
-    body: JSON.stringify({ name, poke_id }),
+    body: JSON.stringify({ name, p_id }),
     headers: {
       'Content-Type': 'application/json'
     }

@@ -11,7 +11,7 @@ Captured.init(
       primaryKey: true,
       autoIncrement: true
     },
-    poke_id: {
+    p_id: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
@@ -29,8 +29,84 @@ Captured.init(
     },
     custom_name: {
       type: DataTypes.STRING,
-      defaultValue: this.name
+      defaultValue: null
     },
+    types: {
+      type:DataTypes.STRING,
+      get:function(types){
+        return JSON.stringify(this.getDataValue('types', types));
+      },
+      set:function(value){
+        return this.setDataValue('types', value);
+      }
+    },
+    weight: {
+      type: DataTypes.INTEGER
+    },
+    abilities: {
+      type:DataTypes.STRING,
+      get:function(){
+        return JSON.stringify(this.getDataValue('abilities'));
+      },
+      set:function(value){
+        return this.setDataValue('abilities', value);
+      }
+    },
+    weaknesses: {
+      type:DataTypes.STRING,
+      get:function(){
+        return JSON.stringify(this.getDataValue('weaknesses'));
+      },
+      set:function(value){
+        return this.setDataValue('weaknesses', value);
+      }
+    },
+    strengths: {
+      type:DataTypes.STRING,
+      get:function(){
+        return JSON.stringify(this.getDataValue('strengths'));
+      },
+      set:function(value){
+        return this.setDataValue('strengths', value);
+      }
+    },
+    base_hp: {
+      type: DataTypes.INTEGER
+    },
+    base_attack: {
+      type: DataTypes.INTEGER
+    },
+    base_defense: {
+      type: DataTypes.INTEGER
+    },
+    speed: {
+      type: DataTypes.INTEGER
+    },
+    evolutions: {
+      type:DataTypes.STRING,
+      get:function(){
+        return JSON.stringify(this.getDataValue('evolutions'));
+      },
+      set:function(value){
+        return this.setDataValue('evolutions', value);
+      }
+    },
+    evo_pic: {
+      type:DataTypes.STRING,
+      get:function(){
+        return JSON.stringify(this.getDataValue('evo_pic'));
+      },
+      set:function(value){
+        return this.setDataValue('evo_pic', value);
+      }
+    },
+    generation: {
+      type: DataTypes.STRING
+    },
+    image_url: {
+      type: DataTypes.STRING
+    },
+
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -41,7 +117,6 @@ Captured.init(
     }
   },
   {
-
     sequelize,
     timestamps: false,
     freezeTableName: true,
