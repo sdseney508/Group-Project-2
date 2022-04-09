@@ -7,7 +7,6 @@ $(function() {
 });
 
 const searchf = async (event) => {
-  debugger;
   event.preventDefault();
 
   // Collect values from the login form
@@ -22,7 +21,7 @@ const searchf = async (event) => {
     console.log(response);
     if (response.ok) {
       // If successful, redirect the browser to the homepage but with a logout button instead of login
-      document.location.replace('/pokemondetails');
+      document.location.replace(`/pokemon/${name}`);
     } else {
       alert(response.statusText);
     }
@@ -31,4 +30,8 @@ const searchf = async (event) => {
 
 document
   .querySelector('.pokeball')
-  .addEventListener('submit', searchf);
+  .addEventListener('click', searchf);
+
+document
+  .querySelector('.search')
+  .addEventListener('Submit', searchf);

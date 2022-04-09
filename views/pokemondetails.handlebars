@@ -1,26 +1,34 @@
 
 {{!-- make this the display of all the pokemon in the game.  Make the name of the pokemon a hyperlink so it can be added to the users favorites or caught lists. --}}
-
-<div class="container">
-  <div class="row">
-    <div class="col-12 d-flex flex-wrap justify-content-around">
-
-
-      <div class="card mb-5" style="width: 18rem;">
-        <div class="card-header">
-          <img src={{pokemon.image_url}} class="card-img-top" alt="{{pokemon.name}}">
-          <a class="card-title" href="/pokemon/{{pokemon.name}}">{{pokemon.name}}</a>
-        </div>
-        <div class="card-body">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Id: {{pokemon.p_id}}</li>
-            <li class="list-group-item">Types: {{pokemon.types}}</li>
-            <li class="list-group-item">Abilities: {{pokemon.abilities}}</li>
-          </ul>
-        </div>
+      <div class="form-group">
+        <button class="btn btn-primary backBtn" id="backBtn" type="submit">Go Back</button>
       </div>
-        
+<div class="row">
+  <div class="col-12 d-flex flex-wrap justify-content-around">
+    <div class="card mb-4" style="width: 25rem;">
+      <div class="card-header">
+        <img src={{pokemons.image_url}} class="card-img-top" alt="{{pokemons.name}}" >
+         <p class="card-title" href="/pokemon/{{pokemons.name}}">{{pokemons.name}}</p>
+      </div>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Id: {{pokemons.p_id}}</li>
+          <li class="list-group-item">Types: {{pokemons.types}}</li>
+          <li class="list-group-item">Abilities: {{pokemons.abilities}}</li>
+          <li class="list-group-item">Strengths: {{pokemons.strengths}}</li>
+          <li class="list-group-item">Weaknesses: {{pokemons.weaknesses}}</li>
+          <li class="list-group-item">Base HP: {{pokemons.base_hp}}</li>
+          <li class="list-group-item">Base Attack: {{pokemons.base_attacks}}</li>
+          <li class="list-group-item">Base Defense: {{pokemons.base_attacks}}</li>
+          <li class="list-group-item">Speed: {{pokemons.speed}}</li>
+          <li class="list-group-item">Weight: {{pokemons.weight}}</li>
+          <li class="list-group-item"><p>Evolutions</p>
+           <a class="evo-pic" href="/pokemon/{{pokemons.evolutions.[0]}}"><img src={{pokemons.evo_pic.[0]}} class="evo-pic" alt=""></a>->
+           <a class="evo-pic" href="/pokemon/{{pokemons.evolutions.[1]}}"><img src={{pokemons.evo_pic.[1]}} class="evo-pic" alt=""></a>->
+           <a class="evo-pic" href="/pokemon/{{pokemons.evolutions.[2]}}"><img src={{pokemons.evo_pic.[2]}} class="evo-pic" alt=""></a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
-<script src="/js/pokemon.js"></script>
+<script src="/js/pokemondetails.js"></script>

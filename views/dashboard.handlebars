@@ -3,10 +3,10 @@
 <div class="row">
   <div class="col-12 d-flex flex-wrap justify-content-around">
     {{#each captured as |caught| }}
-    <div class="card mb-4" style="width: 18rem;">
+    <div class="card mb-4" style="width: 25rem;">
       <div class="card-header">
-        <img src={{caught.image_url}} class="card-img-top" alt="{{caught.name}}">
-         <a class="card-title" href="/pokemon/{{caught.name}}">{{caught.name}}</a>
+        <img src={{caught.image_url}} class="card-img-top" alt="{{caught.name}}" >
+         <p class="card-title" href="/pokemon/{{caught.name}}">{{caught.name}}</p>
       </div>
       <div class="card-body">
         <ul class="list-group list-group-flush">
@@ -14,11 +14,17 @@
           <li class="list-group-item">Types: {{caught.types}}</li>
           <li class="list-group-item">Abilities: {{caught.abilities}}</li>
           <li class="list-group-item">Strengths: {{caught.strengths}}</li>
+          <li class="list-group-item">Weaknesses: {{caught.weaknesses}}</li>
+          <li class="list-group-item">Base HP: {{caught.base_hp}}</li>
+          <li class="list-group-item">Base Attack: {{caught.base_attacks}}</li>
+          <li class="list-group-item">Base Defense: {{caught.base_attacks}}</li>
+          <li class="list-group-item">Speed: {{caught.speed}}</li>
           <li class="list-group-item">Weight: {{caught.weight}}</li>
+          <li class="list-group-item"><p>Evolutions</p>
+           <a class="evo-pic" href="/pokemon/{{caught.evolutions.[0]}}"><img src={{caught.evo_pic.[0]}} class="evo-pic" alt=""></a>->
+           <a class="evo-pic" href="/pokemon/{{caught.evolutions.[1]}}"><img src={{caught.evo_pic.[1]}} class="evo-pic" alt=""></a>->
+           <a class="evo-pic" href="/pokemon/{{caught.evolutions.[2]}}"><img src={{caught.evo_pic.[2]}} class="evo-pic" alt=""></a></li>
         </ul>
-        <div class="card-body">
-          <button class="add-btn" data-name="{{caught.name}}" data-id="{{caught.p_id}}">Add to Collection</button>
-        </div>
       </div>
     </div>
     {{/each}}
