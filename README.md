@@ -1,5 +1,5 @@
 # Pokedex
-![image](https://user-images.githubusercontent.com/62141103/162576169-5ea31b91-4e14-4973-8535-3c39cc652043.png)
+![image](https://user-images.githubusercontent.com/62141103/162576186-336daf66-b42b-426f-a0a7-111b0a24d9b2.png)
 
 Ultimate Pokedex
 
