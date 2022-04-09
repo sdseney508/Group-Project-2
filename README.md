@@ -1,61 +1,50 @@
-# Group-Project-2
+# Pokedex
+![image](https://user-images.githubusercontent.com/62141103/162575698-05e47dd1-f5db-4d5e-9617-46c4842f76e5.png)
 
 Ultimate Pokedex
 
-User Stories:
+## The requirements for the project were as following:
+* Use Node.js and Express.js to create a RESTful API.
+* Use Handlebars.js as the template engine.
+* Use MySQL and the Sequelize ORM for the database.
+* Have both GET and POST routes for retrieving and adding new data.
+* Use at least one new library, package, or technology that we haven’t discussed.
+* Have a folder structure that meets the MVC paradigm.
+* Include authentication (express-session and cookies).
+* Protect API keys and sensitive information with environment variables.
+* Be deployed using Heroku (with data).
+* Have a polished UI.
+* Be responsive.
+* Be interactive (i.e., accept and respond to user input).
+* Meet good-quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
+* Have a professional README (with unique name, description, technologies used, screenshot, and link to deployed application).
+* 
+# User Stories:
+As a USER i want to be able to search all the pokemon in the Poke-verse. 
 
-Search Features (results come from a get request from pokeapi):
-    Game / Generation = list of all pokemon in card format for what ones were in what game -check
-    Type / element = cards of all pokemon in that type.  - check
-    Name = pokemon name gives you a card about that pokemon - check
-    strength = cards of all pokemon with that strength - poop
-    weakness = cards of all pokemon with that weakness - poop
+# Acceptance Criteria
+    GIVEN a top level search page for Pokemon:
+    
+    Cards of random Pokemon are shown to picque their curiosity about various Pokemon.
+    
+    WHEN a User selects the name of a Pokemon from the random cards, THEN they are taken to a details page providing more information on the Pokemon.
+    
+    The USER is given a page to Create an Account
+    
+    WHEN the USER logs in, THEN they are taken to their personal Pokemon Dashboard.
+	
+	WHEN I type in a pokemon name in the search, 
+	THEN I am given a card containing the details on that Pokemon
+	
+    WHEN the user selects add to collection and logged in, THEN the pokemon is added to their unique collection.  If not logged in, the user is not presented a capture button
 
+# MVP
+* Search Function - A user should be able to search for Pokemon.
+* Detailed Cards - Specific details presented on a user's key pokemon
+* Personal Collection - Store the users captured Pokemon and display to the user
 
-User Features (stored on our db in a users model):
-    Username
-    Password
-    Bio
-    Profile Picture / Avatars (possible growth feature)
-    Personal Pokedex - they can tag from the seearch features and add to their pokedex; they can also tag ones as their favorite and if they've ever caught it
-    Search full podex
-
-
-Pokedex Features (on our server / database, rest of info is done by a get call to pokeapi.co/docs/v2#pokemon):
-    user_id
-    pokemon_name*
-    unique_name
-    favorite
-    captured field
-    captured date
-    captured game
-
-
-Pokemon Cards:
-    name
-    picture
-    strength
-    weaknesses
-    abilities
-    capability to evolve it / search by evolution (possible growth feature)
-
-
-Profile Page Features:
-    Display avatar above name
-    show most recent 6 favorites
-    show most recent 6 captured
-    show friends / other users (ossible growth feature)
-    logout button
-    drop downs for search features
-
-
-
-As a user WHEN i select a Pokemon, THEN i am presented with a card containing the information about that Pokemon
-AS a User, i want to be given awards / medals for collecting benchmark numbers of different pokemon
-AS a USER i want to be told that i've just captured a rare pokemon
-WHEN I capture a pokemon, a unique card for my pokemon is created
-AS a user, i want to be able to search for other users in my area
-AS a USER, i want to be able to share my list of captured pokemon with other users
-AS a USER i want to be able to display some sort of avatar on my home page
-
-
+# Future Development Features (Icebox)
+* Users can find others in their area
+* Sending friend requests to other players via name or id #
+* Teams generated based on strength for team battles
+* Caught and Customized name for Pokémon in collection
