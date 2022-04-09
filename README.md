@@ -2,8 +2,52 @@
 ![image](https://user-images.githubusercontent.com/62141103/162576186-336daf66-b42b-426f-a0a7-111b0a24d9b2.png)
 
 Ultimate Pokedex
+ ## Table of Contents
+ -[Installation](#installation)
 
-## The requirements for the project were as following:
+ -[Usage](#usage)
+
+ -[Credits](#credits)
+
+ -[License](#license)
+
+ -[Badges](#badges)
+
+ -[Features](#features)
+
+ -[How To Contribute](#contributing)
+
+ -[Tests](#tests)
+
+ -[Questions](#questions)
+
+
+ ## Installation
+ 💾 Copy the folders and files onto the desired loaction, then from your terminal first install inquirer and jet by running: 
+ 
+ -npm i
+
+ Then launch start the server:
+
+ -npm start.
+
+from there launch: localhost:3001 from your broswer or test the app in insomnia.
+
+The app is also fully deployed at:
+https://unh-pokedex.herokuapp.com/
+
+ ## Usage
+ None
+ ## Credits
+ None
+ ## License
+
+ ![badge](https://img.shields.io/badge/license-MIT-blue)
+ 
+ ## Badges
+
+ ## Features
+# The requirements for the project were as following:
 * Use Node.js and Express.js to create a RESTful API.
 * Use Handlebars.js as the template engine.
 * Use MySQL and the Sequelize ORM for the database.
@@ -48,3 +92,15 @@ As a USER i want to be able to search all the pokemon in the Poke-verse.
 * Sending friend requests to other players via name or id #
 * Teams generated based on strength for team battles
 * Caught and Customized name for Pokémon in collection
+ 
+ ## Contributing 
+ N/A
+ ## Tests
+Manual tests using Insomnia were run for all routes to the server.  
+
+ ## Questions
+For questions on usage or functionality i can be reached at:
+
+Github: [sdseney508](https://github.com/sdseney508)
+
+E-mail: sdseney508@gmail.com
