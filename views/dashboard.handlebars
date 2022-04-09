@@ -1,4 +1,29 @@
 <h2>Gotta Catch 'Em All! </h2>
+
+<div class="row">
+  <div class="col-12 d-flex flex-wrap justify-content-around">
+    {{#each captured as |pokemon| }}
+    <div class="card mb-4" style="width: 18rem;">
+      <div class="card-header">
+        <img src={{pokemon.image_url}} class="card-img-top" alt="{{pokemon.name}}">
+         <a class="card-title" href="/pokemon/{{pokemon.name}}">{{pokemon.name}}</a>
+      </div>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Id: {{pokemon.poke_id}}</li>
+          <li class="list-group-item">Types: {{pokemon.types}}</li>
+          <li class="list-group-item">Abilities: {{pokemon.abilities}}</li>
+        </ul>
+        <div class="card-body">
+          <button class="add-btn" data-name="{{pokemon.name}}" data-id="{{pokemon.p_id}}">Add to Collection</button>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+
+  </div>
+</div>
+
 <div class="row">
   <div class="col-12 d-flex flex-wrap justify-content-around">
     {{#each pokemons as |pokemon| }}
@@ -25,6 +50,3 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="./js/dashboard.js"></script>
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}

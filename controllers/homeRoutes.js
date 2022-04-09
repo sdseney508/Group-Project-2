@@ -7,20 +7,17 @@ router.get('/', async (req, res) => {
   try {
     if (req.session.logged_in) {
       res.redirect('/dashboard');
-    }
-    else {
-      console.log('in homeroutes');
+    } else {
     //when you hit the homepage, render 8 pokemon, dont make them log in
       const all_pokemon = await pokehelper.get_all();
       console.log(all_pokemon);
 
       res.render('homepage', {
-      all_pokemon,
-      logged_in: req.session.logged_in
-    });
-    } 
-  }
-  catch (err) {
+        all_pokemon,
+        logged_in: req.session.logged_in
+      });
+    }
+  } catch (err) {
     console.log(err);
     res.status(400).json(err);
   }
@@ -36,10 +33,23 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
-    const pokemons = await pokehelper.get_all();
+    const captured = user.captureds;
+    // const pokeCard=[];
+    
+    // for (let i = 0; i < userPoke.length; i++) {
+      
+      //     const pokeId =userPoke[i].poke_id;
+      //     const buildPoke = await pokehelper.get_one(pokeId);
+      // //     pokeCard.push(buildPoke);
+      // console.log(buildPoke)
+      // }
+      // console.log(pokeCard);
+      
+      const pokemons = await pokehelper.get_all();
 
     res.render('dashboard', {
       ...user,
+      captured,
       pokemons,
       logged_in: true
     });
@@ -64,10 +74,10 @@ router.get('/pokemon/:id', async (req, res) => {
   }
 });
 
-router.get('/create_account', (req, res) => {
+router.get('/signup', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (!req.session.logged_in) {
-    res.render('create_account');
+    res.render('signup');
     return;
   }
   res.redirect('/dashboard');

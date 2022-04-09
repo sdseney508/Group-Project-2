@@ -22,8 +22,6 @@
     <div class="poke-header">
       <h1><a href="/">Pokédex</a></h1>
     </div>
-    <div class="sidebar">
-      <!-- Conditionally render login or logout links -->
 
     {{!-- <div class="wrapper"> --}}
       <div class="sidebar">
@@ -48,7 +46,7 @@
         </nav>
       </div>
 
-    </div>
+    {{!-- </div> --}}
   </header>
 
   <main class="container container-fluid mt-5">
@@ -66,7 +64,6 @@
     crossorigin="anonymous"></script>
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
-  <script src="/js/login.js"></script>
   {{/if}}
       <!-- updated to jQuery 3.6 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
