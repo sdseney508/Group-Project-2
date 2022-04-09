@@ -12,6 +12,16 @@ body {
   justify-content: center;
 }
 
+.card-img-top{
+  height: 15rem;
+  width: 15rem;
+}
+
+.evo-pic {
+  height: 4.5rem;
+  width: 4.5rem;
+}
+
 .poke-header {
   padding: 20px;
   margin-top: 20px;
