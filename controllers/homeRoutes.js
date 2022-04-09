@@ -35,14 +35,11 @@ router.get('/dashboard', withAuth, async (req, res) => {
     const pokemons = await pokehelper.get_all();
     const captured_data = user.captureds;
     let captured = [];
-    console.log(captured_data.length);
     for (let i = 0; i <captured_data.length; i++) {
        let cap = await pokehelper.get_one(captured_data[i].p_id);
       //  console.log(cap[i].evo_pic[0]);
        captured.push(cap);
     };
-
-    console.log(captured[0].evo_pic[1]);
     res.render('dashboard', {
       ...user,
       pokemons,
@@ -57,6 +54,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
 router.get('/pokemon/:id', async (req, res) => {
   try {
+    console.log(req.params.id);
     // Get all pokemon associated with the logged in user name of the blog creator
     const pokemons = await pokehelper.get_one(req.params.id);
     console.log(pokemons);

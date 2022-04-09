@@ -33,7 +33,7 @@ const get_one = async (id) => {
     p_id = response.data.id;
     name = response.data.name;
     weight = response.data.weight;
-    base_hp = response.data.stats[0].base_stat;
+    base_hp = response.data.stats[0]?.base_stat;
     base_attack = response.data.stats[1].base_stat;
     base_defense = response.data.stats[2].base_stat;
     speed = response.data.stats[5].base_stat;
@@ -55,6 +55,7 @@ const get_one = async (id) => {
       strengths = [...strengths, ...sw.strengths(ptype)];
       weaknesses = [...weaknesses, ...sw.weaknesses(ptype)];
     }
+    console.log('strengths: ' + strengths);
   });
 
   await Pokemon.getEvolutionLine(name).then(async function (response) {

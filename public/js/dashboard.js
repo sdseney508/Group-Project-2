@@ -1,6 +1,6 @@
 const addToCaptured = async (event) => {
   event.preventDefault();
-
+  console.log(event);
   const p_id = $(event.target).data('id');
   const name = $(event.target).data('name');
 
