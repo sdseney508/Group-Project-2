@@ -9,7 +9,8 @@ router.post('/', withAuth, async (req, res) => {
     const poke_obj = await pokehelper.get_one(req.body.name);
     console.log(poke_obj);
     const newCaptured = await Captured.create({
-      poke_obj,
+      name: req.body.name,
+      p_id: req.body.p_id,
       user_id: req.session.user_id
     });
 

@@ -32,17 +32,25 @@ router.get('/dashboard', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
-
-    const captured = user.captureds;
     const pokemons = await pokehelper.get_all();
+    const captured_data = user.captureds;
+    let captured = [];
+    console.log(captured_data.length);
+    for (let i = 0; i <captured_data.length; i++) {
+       let cap = await pokehelper.get_one(captured_data[i].name);
+       console.log(captured_data[i].name);
+       captured.push(cap);
+    };
 
+    console.log(captured);
     res.render('dashboard', {
       ...user,
-      captured,
       pokemons,
+      captured,
       logged_in: true
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });

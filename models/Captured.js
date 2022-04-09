@@ -32,9 +32,9 @@ Captured.init(
       defaultValue: null
     },
     types: {
-      type:DataTypes.TEXT,
-      get:function(){
-        return JSON.parse(this.getDataValue('types'));
+      type:DataTypes.STRING,
+      get:function(types){
+        return JSON.stringify(this.getDataValue('types', types));
       },
       set:function(value){
         return this.setDataValue('types', value);
@@ -44,27 +44,27 @@ Captured.init(
       type: DataTypes.INTEGER
     },
     abilities: {
-      type:DataTypes.TEXT,
+      type:DataTypes.STRING,
       get:function(){
-        return JSON.parse(this.getDataValue('abilities'));
+        return JSON.stringify(this.getDataValue('abilities'));
       },
       set:function(value){
         return this.setDataValue('abilities', value);
       }
     },
     weaknesses: {
-      type:DataTypes.TEXT,
+      type:DataTypes.STRING,
       get:function(){
-        return JSON.parse(this.getDataValue('weaknesses'));
+        return JSON.stringify(this.getDataValue('weaknesses'));
       },
       set:function(value){
         return this.setDataValue('weaknesses', value);
       }
     },
     strengths: {
-      type:DataTypes.TEXT,
+      type:DataTypes.STRING,
       get:function(){
-        return JSON.parse(this.getDataValue('strengths'));
+        return JSON.stringify(this.getDataValue('strengths'));
       },
       set:function(value){
         return this.setDataValue('strengths', value);
@@ -83,18 +83,18 @@ Captured.init(
       type: DataTypes.INTEGER
     },
     evolutions: {
-      type:DataTypes.TEXT,
+      type:DataTypes.STRING,
       get:function(){
-        return JSON.parse(this.getDataValue('evolutions'));
+        return JSON.stringify(this.getDataValue('evolutions'));
       },
       set:function(value){
         return this.setDataValue('evolutions', value);
       }
     },
     evo_pic: {
-      type:DataTypes.TEXT,
+      type:DataTypes.STRING,
       get:function(){
-        return JSON.parse(this.getDataValue('evo_pic'));
+        return JSON.stringify(this.getDataValue('evo_pic'));
       },
       set:function(value){
         return this.setDataValue('evo_pic', value);

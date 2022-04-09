@@ -2,20 +2,22 @@
 
 <div class="row">
   <div class="col-12 d-flex flex-wrap justify-content-around">
-    {{#each captured as |pokemon| }}
+    {{#each captured as |caught| }}
     <div class="card mb-4" style="width: 18rem;">
       <div class="card-header">
-        <img src={{pokemon.image_url}} class="card-img-top" alt="{{pokemon.name}}">
-         <a class="card-title" href="/pokemon/{{pokemon.name}}">{{pokemon.name}}</a>
+        <img src={{caught.image_url}} class="card-img-top" alt="{{caught.name}}">
+         <a class="card-title" href="/pokemon/{{caught.name}}">{{caught.name}}</a>
       </div>
       <div class="card-body">
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">Id: {{pokemon.poke_id}}</li>
-          <li class="list-group-item">Types: {{pokemon.types}}</li>
-          <li class="list-group-item">Abilities: {{pokemon.abilities}}</li>
+          <li class="list-group-item">Id: {{caught.p_id}}</li>
+          <li class="list-group-item">Types: {{caught.types}}</li>
+          <li class="list-group-item">Abilities: {{caught.abilities}}</li>
+          <li class="list-group-item">Strengths: {{caught.strengths}}</li>
+          <li class="list-group-item">Weight: {{caught.weight}}</li>
         </ul>
         <div class="card-body">
-          <button class="add-btn" data-name="{{pokemon.name}}" data-id="{{pokemon.p_id}}">Add to Collection</button>
+          <button class="add-btn" data-name="{{caught.name}}" data-id="{{caught.p_id}}">Add to Collection</button>
         </div>
       </div>
     </div>
