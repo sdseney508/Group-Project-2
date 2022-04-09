@@ -107,9 +107,6 @@ body {
   padding-bottom: 20px;
 }
 
-
-
-
 .no-button {
   background: none;
   border: none;
@@ -131,6 +128,9 @@ body {
   margin-left: -5px;
 }
 
+.backBtn {
+  margin-bottom: 30px;
+}
 
 /*body {
   font-family: 'Open Sans', sans-serif;
