@@ -11,7 +11,7 @@ Captured.init(
       primaryKey: true,
       autoIncrement: true
     },
-    poke_id: {
+    p_id: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
@@ -29,40 +29,76 @@ Captured.init(
     },
     custom_name: {
       type: DataTypes.STRING,
-      defaultValue: this.name
+      defaultValue: null
     },
     types: {
-      type: DataTypes.ARRAY(DataTypes.STRING)
+      type:DataTypes.TEXT,
+      get:function(){
+        return JSON.parse(this.getDataValue('types'));
+      },
+      set:function(value){
+        return this.setDataValue('types', value);
+      }
     },
     weight: {
       type: DataTypes.INTEGER
     },
     abilities: {
-      type: DataTypes.ARRAY(DataTypes.STRING)
+      type:DataTypes.TEXT,
+      get:function(){
+        return JSON.parse(this.getDataValue('abilities'));
+      },
+      set:function(value){
+        return this.setDataValue('abilities', value);
+      }
     },
     weaknesses: {
-      type: DataTypes.ARRAY(DataTypes.STRING)
+      type:DataTypes.TEXT,
+      get:function(){
+        return JSON.parse(this.getDataValue('weaknesses'));
+      },
+      set:function(value){
+        return this.setDataValue('weaknesses', value);
+      }
     },
     strengths: {
-      type: DataTypes.ARRAY(DataTypes.STRING)
+      type:DataTypes.TEXT,
+      get:function(){
+        return JSON.parse(this.getDataValue('strengths'));
+      },
+      set:function(value){
+        return this.setDataValue('strengths', value);
+      }
     },
     base_hp: {
-      type: DataTypes.NUMBER
+      type: DataTypes.INTEGER
     },
     base_attack: {
-      type: DataTypes.NUMBER
+      type: DataTypes.INTEGER
     },
     base_defense: {
-      type: DataTypes.NUMBER
+      type: DataTypes.INTEGER
     },
     speed: {
-      type: DataTypes.NUMBER
+      type: DataTypes.INTEGER
     },
     evolutions: {
-      type: DataTypes.ARRAY(DataTypes.STRING)
+      type:DataTypes.TEXT,
+      get:function(){
+        return JSON.parse(this.getDataValue('evolutions'));
+      },
+      set:function(value){
+        return this.setDataValue('evolutions', value);
+      }
     },
     evo_pic: {
-      type: DataTypes.ARRAY(DataTypes.STRING)
+      type:DataTypes.TEXT,
+      get:function(){
+        return JSON.parse(this.getDataValue('evo_pic'));
+      },
+      set:function(value){
+        return this.setDataValue('evo_pic', value);
+      }
     },
     generation: {
       type: DataTypes.STRING
