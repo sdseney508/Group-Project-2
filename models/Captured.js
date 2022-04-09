@@ -31,6 +31,46 @@ Captured.init(
       type: DataTypes.STRING,
       defaultValue: this.name
     },
+    types: {
+      type: DataTypes.ARRAY(DataTypes.STRING)
+    },
+    weight: {
+      type: DataTypes.INTEGER
+    },
+    abilities: {
+      type: DataTypes.ARRAY(DataTypes.STRING)
+    },
+    weaknesses: {
+      type: DataTypes.ARRAY(DataTypes.STRING)
+    },
+    strengths: {
+      type: DataTypes.ARRAY(DataTypes.STRING)
+    },
+    base_hp: {
+      type: DataTypes.NUMBER
+    },
+    base_attack: {
+      type: DataTypes.NUMBER
+    },
+    base_defense: {
+      type: DataTypes.NUMBER
+    },
+    speed: {
+      type: DataTypes.NUMBER
+    },
+    evolutions: {
+      type: DataTypes.ARRAY(DataTypes.STRING)
+    },
+    evo_pic: {
+      type: DataTypes.ARRAY(DataTypes.STRING)
+    },
+    generation: {
+      type: DataTypes.STRING
+    },
+    image_url: {
+      type: DataTypes.STRING
+    },
+
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -41,7 +81,6 @@ Captured.init(
     }
   },
   {
-
     sequelize,
     timestamps: false,
     freezeTableName: true,

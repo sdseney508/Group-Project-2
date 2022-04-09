@@ -34,18 +34,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     const user = userData.get({ plain: true });
 
     const captured = user.captureds;
-    // const pokeCard=[];
-    
-    // for (let i = 0; i < userPoke.length; i++) {
-      
-      //     const pokeId =userPoke[i].poke_id;
-      //     const buildPoke = await pokehelper.get_one(pokeId);
-      // //     pokeCard.push(buildPoke);
-      // console.log(buildPoke)
-      // }
-      // console.log(pokeCard);
-      
-      const pokemons = await pokehelper.get_all();
+    const pokemons = await pokehelper.get_all();
 
     res.render('dashboard', {
       ...user,

@@ -5,22 +5,19 @@
     "date_caught": "1 Jan 2022",
     "custom_name": "Bulbie",
     "user_id": 1,
-    "poke_id": 1
-  },
-  {
-    "name": "pikachu",
-    "game_caught": "Red",
-    "date_caught": "1 Jan 2022",
-    "custom_name": "pik",
-    "user_id": 2,
-    "poke_id": 25
-  },
-  {
-    "name": " Venusaur",
-    "game_caught": "Red",
-    "date_caught": "1 Jan 2022",
-    "custom_name": "Venus",
-    "user_id": 3,
-    "poke_id": 3
+    "poke_id": 1,
+    "types": ["grass", "whatever"],
+    "weight":  111,
+    "abilities": ["fight", "funny looks"],
+    "weaknesses": ["fire", "water"],
+    "strengths": ["heavy", "boxing"],
+    "base_hp": 123,
+    "base_attack":456,
+    "base_defense": 789,
+    "speed": 5,
+    "evolutions": ["bulbasaur", "venus", "ivy"],
+    "evo_pic": ["pic-1","pic-2","pic-3"] ,
+    "generation": "i",
+    "image_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
   }
 ]
